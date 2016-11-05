@@ -32,7 +32,7 @@ setup(
     ],
     install_requires=[
         'asphalt ~= 2.0',
-        'motor >= 0.6.2, < 1.0'
+        'motor ~= 1.0'
     ],
     entry_points={
         'asphalt.components': [

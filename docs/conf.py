@@ -33,4 +33,4 @@ htmlhelp_basename = project.replace('-', '') + 'doc'
 intersphinx_mapping = {'python': ('http://docs.python.org/3/', None),
                        'asphalt': ('http://asphalt.readthedocs.org/en/latest/', None),
                        'motor': ('https://motor.readthedocs.org/en/stable/', None),
-                       'pymongo': ('https://api.mongodb.com/python/2.8/', None)}
+                       'pymongo': ('https://api.mongodb.com/python/3.3.0/', None)}
