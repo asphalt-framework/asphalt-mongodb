@@ -35,6 +35,14 @@ setup(
         'asphalt ~= 2.0',
         'motor ~= 1.0'
     ],
+    extras_require={
+        'testing': [
+            'pytest',
+            'pytest-cov',
+            'pytest-catchlog',
+            'pytest-asyncio >= 0.5.0'
+        ]
+    },
     entry_points={
         'asphalt.components': [
             'mongodb = asphalt.mongodb.component:MongoDBComponent'
