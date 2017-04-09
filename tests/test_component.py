@@ -16,7 +16,7 @@ async def test_default_client(caplog):
     records.sort(key=lambda r: r.message)
     assert len(records) == 2
     assert records[0].message == ("Configured MongoDB client (default / ctx.mongo; "
-                                  "host='localhost')")
+                                  "hosts={'localhost:27017'})")
     assert records[1].message == 'MongoDB client (default) shut down'
 
 
@@ -35,9 +35,9 @@ async def test_multiple_clients(caplog):
     records.sort(key=lambda r: r.message)
     assert len(records) == 4
     assert records[0].message == ("Configured MongoDB client (db1 / ctx.db1; "
-                                  "host='localhost:27018')")
+                                  "hosts={'localhost:27018'})")
     assert records[1].message == ("Configured MongoDB client (db2 / ctx.db2; "
-                                  "host='/tmp/mongodb.sock')")
+                                  "hosts={'/tmp/mongodb.sock'})")
     assert records[2].message == 'MongoDB client (db1) shut down'
     assert records[3].message == 'MongoDB client (db2) shut down'
 
