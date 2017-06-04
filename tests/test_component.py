@@ -1,8 +1,12 @@
+import os
+
 import pytest
 from asphalt.core import Context
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from asphalt.mongodb.component import MongoDBComponent
+
+MONGODB_HOSTNAME = os.getenv('MONGODB_HOST', 'localhost')
 
 
 @pytest.mark.asyncio
@@ -46,7 +50,7 @@ async def test_multiple_clients(caplog):
 async def test_create_remove_document():
     """Test the client against a real MongoDB server."""
     async with Context() as context:
-        await MongoDBComponent().start(context)
+        await MongoDBComponent(host=MONGODB_HOSTNAME).start(context)
         collection = context.mongo['testdb']['testcollection']
         document = {'somekey': 'somevalue'}
         document2 = {'otherkey': 7}

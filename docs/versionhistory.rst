@@ -3,9 +3,10 @@ Version history
 
 This library adheres to `Semantic Versioning <http://semver.org/>`_.
 
-**3.0.1**
+**3.0.1** (2017-06-04)
 
 - Added compatibility with Asphalt 4.0
+- Added Docker configuration for easier local testing
 
 **3.0.0** (2017-04-10)
 
