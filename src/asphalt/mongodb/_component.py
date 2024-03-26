@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import logging
-from collections.abc import AsyncGenerator, Mapping
+from collections.abc import Mapping
 from typing import Any
 
-from asphalt.core import Component, Context, context_teardown
+from asphalt.core import Component, add_resource
 from motor.motor_asyncio import AsyncIOMotorClient
 
 logger = logging.getLogger("asphalt.mongodb")
@@ -33,11 +33,12 @@ class MongoDBComponent(Component):
         self._client = AsyncIOMotorClient(**options)
         self.resource_name = resource_name
 
-    @context_teardown
-    async def start(self, ctx: Context) -> AsyncGenerator[None, Any]:
-        ctx.add_resource(
+    async def start(self) -> None:
+        add_resource(
             self._client,
             self.resource_name,
+            description="MongoDB client",
+            teardown_callback=self._client.close,
         )
         hosts = {
             f"{host}:{port}"
@@ -48,8 +49,3 @@ class MongoDBComponent(Component):
             self.resource_name,
             hosts,
         )
-
-        yield
-
-        self._client.close()
-        logger.info("MongoDB client (%s) shut down", self.resource_name)
