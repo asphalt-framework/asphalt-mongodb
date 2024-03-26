@@ -18,7 +18,7 @@ It is a wrapper for the Motor_ library.
 Project links
 -------------
 
-* `Documentation <http://asphalt-mongodb.readthedocs.org/en/latest/>`_
+* `Documentation <http://asphalt-mongodb.readthedocs.io/en/latest/>`_
 * `Help and support <https://github.com/asphalt-framework/asphalt/wiki/Help-and-support>`_
 * `Source code <https://github.com/asphalt-framework/asphalt-mongodb>`_
 * `Issue tracker <https://github.com/asphalt-framework/asphalt-mongodb/issues>`_
