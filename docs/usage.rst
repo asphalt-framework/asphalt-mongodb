@@ -2,14 +2,17 @@ Using the MongoDB client
 ========================
 
 The MongoDB clients made available in the context are objects compatible with the
-:class:`~motor.motor_tornado.MotorClient` API. As such, refer to Motor's `asyncio tutorial`_ and
-`api documentation`_ for details.
+:class:`~motor.motor_asyncio.AsyncIOMotorClient` API. As such, refer to Motor's
+`asyncio tutorial`_ and `api documentation`_ for details.
 
 An example demonstrating the use of the client in Asphalt::
 
-    async def handler(ctx):
+    from asphalt.core import inject, resource
+
+    @inject
+    async def handler(*, mongodb: AsyncIOMotorClient = resource() -> None:
         # Insert a document to somecollection in somedb
-        collection = ctx.mongo.somedb.somecollection
+        collection = mongodb.somedb.somecollection
         document = {'key': 'value'}
         obj_id = await collection.insert(document)
 

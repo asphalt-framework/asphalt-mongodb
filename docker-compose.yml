@@ -1,15 +1,3 @@
-# Docker-like setup that serves as a local drop-in for the corresponding Travis services
-version: "2"
 services:
-  test:
-    build: .
-    links:
-      - mongodb
-    volumes:
-      - .:/app
-    environment:
-      MONGODB_HOST: mongodb
-    entrypoint: dockerize -wait tcp://mongodb:27017 pytest
-
   mongodb:
     image: mongo
