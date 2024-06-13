@@ -61,13 +61,13 @@ local_scheme = "dirty-tag"
 [tool.ruff.lint]
 extend-select = [
     "ASYNC",        # flake8-async
-    "W",            # pycodestyle warnings
     "G",            # flake8-logging-format
     "I",            # isort
     "ISC",          # flake8-implicit-str-concat
     "PGH",          # pygrep-hooks
     "RUF100",       # unused noqa (yesqa)
     "UP",           # pyupgrade
+    "W",            # pycodestyle warnings
 ]
 
 [tool.ruff.lint.isort]
@@ -76,9 +76,8 @@ known-first-party = ["asphalt.mongodb"]
 [tool.mypy]
 python_version = "3.8"
 strict = true
-ignore_missing_imports = true
 explicit_package_bases = true
-mypy_path = ["src"]
+mypy_path = ["src", "tests"]
 
 [tool.coverage.run]
 source = ["asphalt.mongodb"]
