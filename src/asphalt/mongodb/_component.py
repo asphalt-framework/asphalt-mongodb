@@ -4,8 +4,9 @@ import logging
 from collections.abc import AsyncGenerator, Mapping
 from typing import Any
 
-from asphalt.core import Component, Context, context_teardown
 from motor.motor_asyncio import AsyncIOMotorClient
+
+from asphalt.core import Component, Context, context_teardown
 
 logger = logging.getLogger("asphalt.mongodb")
 

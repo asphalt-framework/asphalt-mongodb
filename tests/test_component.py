@@ -2,10 +2,10 @@ import logging
 import os
 
 import pytest
-from asphalt.core import Context, require_resource
 from motor.motor_asyncio import AsyncIOMotorClient
 from pytest import LogCaptureFixture
 
+from asphalt.core import Context, require_resource
 from asphalt.mongodb import MongoDBComponent
 
 MONGODB_HOSTNAME = os.getenv("MONGODB_HOST", "localhost")
