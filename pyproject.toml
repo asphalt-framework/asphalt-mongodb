@@ -74,6 +74,10 @@ extend-select = [
 known-first-party = ["asphalt.mongodb"]
 known-third-party = ["asphalt.core"]
 
+[tool.pytest.ini_options]
+addopts = ["-rsfE", "--tb=short"]
+testpaths = ["tests"]
+
 [tool.mypy]
 python_version = "3.9"
 strict = true
@@ -87,6 +91,10 @@ branch = true
 
 [tool.coverage.report]
 show_missing = true
+exclude_also = [
+    "@overload",
+    "if TYPE_CHECKING:"
+]
 
 [tool.tox]
 env_list = ["py39", "py310", "py311", "py312", "py313", "pypy3"]

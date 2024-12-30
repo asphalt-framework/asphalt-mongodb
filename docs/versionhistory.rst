@@ -5,10 +5,9 @@ This library adheres to `Semantic Versioning <http://semver.org/>`_.
 
 **UNRELEASED**
 
-- Dropped support for Python 3.7
-- Dropped support for Asphalt earlier than 4.8
+- **BACKWARD INCOMPATIBLE** Bumped minimum Asphalt version to 5.0
 - Dropped support for motor earlier than 3.3
-- Dropped support for the Asphalt context variable
+- Dropped support for Python 3.7 and 3.8
 
 **3.0.1** (2017-06-04)
 
